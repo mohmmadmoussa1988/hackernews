@@ -5,7 +5,7 @@ export const Logo = ()=>{
 
     return(
         <HeaderLogo>
-        <img src={LogoImage} />
+        <img src={LogoImage} /> <span>Hacker News API</span>
         </HeaderLogo>
     )   
 }

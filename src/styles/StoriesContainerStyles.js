@@ -29,7 +29,7 @@ ul{
 
 export const StoriesContainerWrapper = styled.main`
 
-max-width:1140px;
+max-width:100%;
 padding:20px 15px;
 margin:auto;
 

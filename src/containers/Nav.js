@@ -6,17 +6,16 @@ import { useLocation} from "react-router";
 
 export const HeaderNav = ()=>{
     let location = useLocation();
-    console.log(location);
     return(
         <HeaderNavStyle>
-        <Nav>
-        <NavItem className={`${location.pathname='/' ? "active" : ""}`}>
-          <NavLink href="#" >New Articles</NavLink>
-        </NavItem>
-        <NavItem>
-          <NavLink href="#">Top Articles</NavLink>
-        </NavItem>
-      </Nav>
+          <Nav>
+          <NavItem className={`${location.pathname=='/' ? "active" : ""}`}>
+            <NavLink href="#" >New Articles</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Top Articles</NavLink>
+          </NavItem>
+        </Nav>
       </HeaderNavStyle>
     
     )

@@ -2,17 +2,18 @@ import React from 'react';
 import {Switch,Route,Redirect} from 'react-router-dom';
 import NewArticles from './screens/newArticles';
 import {Header} from './containers/Header';
-import {TopHeader} from './styles/HeaderStyles.js';
-
+import { Container } from 'reactstrap';
+import {Loading} from './components/Loading';
 const App = () =>{
   return (
-    <div >
-      <Header navigation/>
-    {/*    <Switch>
-           <Route exact  path='/' component={NewArticles}/>
-      </Switch>     */}
+    <Container>
+      <Loading />
+      <Header/>
+       <Switch>
+           <Route   path='/' component={NewArticles}/>
+      </Switch>     
 
-    </div>
+      </Container>
   );
 }
 
