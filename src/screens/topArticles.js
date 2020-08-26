@@ -14,7 +14,15 @@ getTopStoryIds().then(data=>{ dispatch(ShowLoading(false)); setStories(data)});
 },[])
 
 
-return( <StoriesContainer storiesIds={stories}/>)
+return( 
+    <>
+            {stories.length>0 ? 
+                    <StoriesContainer data-testid="stories-container" storiesIds={stories}/>
+                    :
+                    ''
+            }
+    </>
+)
 }
 
 

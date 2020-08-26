@@ -5,6 +5,8 @@ box-shadow:0px 10px 10px #eee;
 background:#fff;
 border-bottom:1px solid #eee;
 padding:10px;
+z-index:11;
+position:relative;
 `;
 
 export const HeaderLogo = styled.div`

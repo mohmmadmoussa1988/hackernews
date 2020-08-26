@@ -17,7 +17,7 @@ getNewStoryIds().then(data=>{ dispatch(ShowLoading(false)); setStories(data)});
 return( 
         <>
                 {stories.length>0 ? 
-                        <StoriesContainer storiesIds={stories}/>
+                        <StoriesContainer data-testid="stories-container" storiesIds={stories}/>
                         :
                         ''
                 }

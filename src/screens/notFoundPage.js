@@ -3,7 +3,7 @@ import {NotFoundStyle} from '../styles/Notfound';
 const NotFoundPage = () =>{
 
 return(
-    <NotFoundStyle>
+    <NotFoundStyle data-testid="Not-Found">
         404 Page Not found
     </NotFoundStyle>
 )

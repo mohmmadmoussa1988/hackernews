@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup, waitForElement } from '@testing-library/react';
 import { Story } from '../components/Story';
-import { singularStory } from '../fixtures';
+import { storyIds } from '../fixtures';
 import { getStory } from '../services/api';
 
 beforeEach(() => {
@@ -9,14 +9,12 @@ beforeEach(() => {
   jest.resetAllMocks();
 });
 
-jest.mock('../services/api', () => ({
-  getStory: jest.fn(),
-}));
+
 
 test('renders the story component with content', async () => {
-  getStory.mockImplementation(() => Promise.resolve(singularStory));
 
-  const { getByText, getByTestId } = render(<Story storyId="1" />);
+  console.log('data',storyIds[0]);
+  const { getByText, getByTestId } = render(<Story data={storyIds[0]} />);
 
   await waitForElement(() => [
     expect(getByTestId('story')).toBeTruthy(),

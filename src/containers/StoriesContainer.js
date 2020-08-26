@@ -19,7 +19,7 @@ setFilterValue(filter_value);
 
 
   return (
-    <StoriesContainerWrapper data-test-id="stories-container">
+    <StoriesContainerWrapper data-testid="stories-container">
     {
       storyIds.slice(0,count).filter(story=>{
         if(filterValue!='') { return((story.title).toLowerCase().includes(filterValue.toLowerCase())) } else { return(story)}

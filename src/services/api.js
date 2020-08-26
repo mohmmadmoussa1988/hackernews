@@ -16,7 +16,6 @@ export const getNewStoryIds = async () =>{
         result.push(await getStory(element));
         
         if(testdata==5){
-            console.log(result);
             return result;
         }
     }
@@ -34,7 +33,6 @@ export const getTopStoryIds = async () =>{
         result.push(await getStory(element));
         
         if(testdata==5){
-            console.log(result);
             return result;
         }
     }
@@ -42,7 +40,7 @@ export const getTopStoryIds = async () =>{
     return result;
 }
 
-const getStory = async (storyId) =>{
+export const getStory = async (storyId) =>{
     return new Promise(async (resolve, reject) => {
     const result = await axios.get(`${storyUrl+storyId}.json`)
     .then(({data}) => data &&  selectFields(data));

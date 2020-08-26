@@ -16,6 +16,33 @@ configure({adapter: new Adapter()});
 
 describe('App Router', () => {
 
+    test('invalid path should redirect to 404', () => {
+        const wrapper = mount(
+          <MemoryRouter initialEntries={[ '/random' ]}>
+            <Provider store={store}>
+            <App />
+            </Provider>
+          </MemoryRouter>
+        );
+        console.log('wrapper',wrapper);
+        expect(wrapper.find(NotFoundPage)).toHaveLength(1);
+      });
+
+
+      test('/ should redirect to NewArticles', () => {
+        const wrapper = mount(
+          <MemoryRouter initialEntries={[ '/' ]}>
+            <Provider store={store}>
+            <App />
+            </Provider>
+          </MemoryRouter>
+        );
+        console.log('wrapper',wrapper);
+        expect(wrapper.find(NewArticles)).toHaveLength(1);
+        expect(wrapper.find(NotFoundPage)).toHaveLength(0);
+      });
+
+
 
 it('Shallowing the App', () => {
 const wrapper = shallow(
@@ -25,36 +52,6 @@ const wrapper = shallow(
 
 expect(wrapper.length).toEqual(1);   
 });
-
-it('Shallowing the App', () => {
-  const wrapper = shallow(
-  <Provider store={store}>
-  <App />
-  </Provider>);
-  
-  expect(wrapper.length).toEqual(1);   
-  });
-
-  it('Shallowing the App', () => {
-    const wrapper = shallow(
-      <Provider store={store}>
-    <NewArticles/>
-    </Provider>
-    );
-    
-    expect(wrapper.length).toEqual(1);   
-    });
-
-
-    it('Shallowing the App', () => {
-      const wrapper = shallow(
-<Provider store={store}>
-      <TopArticles />
-      </Provider>);
-      
-      expect(wrapper.length).toEqual(1);   
-      });
-
 
 })
 

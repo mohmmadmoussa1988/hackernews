@@ -17,9 +17,9 @@ const App = () =>{
     {showLoading==true && <Loading />}      
     <Header/>
       <Switch>
-        <Route exact  path='/' component={NewArticles}/>
-        <Route exact  path='/top-articles' component={TopArticles}/>
-        <Route component={NotFoundPage}/>           
+      <Route exact  path='/' component={NewArticles}/>
+      <Route exact  path='/top-articles' component={TopArticles}/>
+      <Route component={NotFoundPage}/>           
       </Switch>     
     </Container>
   </Router>

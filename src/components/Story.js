@@ -8,7 +8,7 @@ export const Story = memo(function Story({data}){
     const [story,setStory] = useState(data);
 
     useEffect(()=>{
-        console.log('rendered');
+
     },[])
 
 
