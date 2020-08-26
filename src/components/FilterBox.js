@@ -24,7 +24,7 @@ export const FilterBox = ()=>{
     return(
        <FilterBoxStyle>
            <label>Filter Results</label>
-           <input type="text" value={value} onChange={handleChange} placeholder="Filter articles" />
+           <input type="text" value={value} onChange={handleChange} placeholder="Filter by article title" />
        </FilterBoxStyle>
     )
 }

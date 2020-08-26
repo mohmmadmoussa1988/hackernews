@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
+
+
+const ShowAnimation = keyframes`
+ 0% { opacity:0 }
+ 100% { opacity:1 }
+ `;
+
 
 export const StoryWrapper = styled.section`
 border-top:1px solid #cccccc;
@@ -16,9 +23,12 @@ padding:10px;
 &:nth-of-type(odd){
         background: white;
         }
-    &:nth-of-type(even){
-        background: #f6f6f6;
-        }
+&:nth-of-type(even){
+background: #f6f6f6;
+}
+
+animation-name: ${ShowAnimation};
+animation-duration: 2s;
 
 `;
 
@@ -59,4 +69,5 @@ export const StoryMetaElement = styled.span`
 font-weight:bold;
 color:${props=>props.color || 'red'};
 `;
+
 

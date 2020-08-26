@@ -7,22 +7,24 @@ import { useSelector,useDispatch } from 'react-redux';
 
 export const StoriesContainer=({storiesIds}) =>{
 const [storyIds,setStoryIds]=useState([]);
-const filterValue = useSelector(state=>state.app.filter_value);
-//const {count} = InfiniteScroll();
-const {count} =10;
-useEffect(()=>{
+const [filterValue,setFilterValue] = useState('');
+const filter_value = useSelector(state=>state.app.filter_value);
+const {count} = InfiniteScroll();
+const delay = ms => new Promise(res => setTimeout(res, ms));
 
-  if(storyIds.length==0){setStoryIds(storiesIds);}
-  console.log('filter_value',filter_value);
-},[filterValue])
+useEffect(()=>{
+if(storyIds.length==0){setStoryIds(storiesIds);}
+setFilterValue(filter_value);
+},[filter_value])
 
 
   return (
     <StoriesContainerWrapper data-test-id="stories-container">
     {
-      storyIds.slice(0,count).map(storyId =>(
-        <Story storyId={storyId} key={storyId}/>
-      ))
+      storyIds.slice(0,count).filter(story=>{
+        if(filterValue!='') { return((story.title).toLowerCase().includes(filterValue.toLowerCase())) } else { return(story)}
+      }).map(story =><Story data={story} key={story.id}/>)
+        
     }
     </StoriesContainerWrapper>
 )

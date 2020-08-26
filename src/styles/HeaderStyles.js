@@ -41,6 +41,7 @@ export const FilterBoxStyle = styled.div`
 
   & input{
     display:inline-block;
+    outline:none;
 
     ::placeholder{
         font-size:10px;
