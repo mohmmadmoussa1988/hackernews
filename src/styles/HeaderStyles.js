@@ -19,9 +19,6 @@ export const HeaderLogo = styled.div`
 
 
 export const HeaderNavStyle = styled.div`
-
-
-
 & li{
 
     &.active{
@@ -31,5 +28,9 @@ export const HeaderNavStyle = styled.div`
         }
     }    
 }
+`;
 
+export const FilterBoxStyle = styled.div`
+  
+}
 `;
