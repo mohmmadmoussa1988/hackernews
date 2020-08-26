@@ -5,4 +5,12 @@ export const SetFilterValue = (value) => ({
     payload : value
   });
   
+  export const ShowLoading = (value) => ({
+    type: AppActionTypes.SHOW_LOADING,
+    payload : value
+  });
+
+
+
+  
   

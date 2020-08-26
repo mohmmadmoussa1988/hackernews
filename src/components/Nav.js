@@ -10,10 +10,10 @@ export const HeaderNav = ()=>{
         <HeaderNavStyle>
           <Nav>
           <NavItem className={`${location.pathname=='/' ? "active" : ""}`}>
-            <NavLink href="#" >New Articles</NavLink>
+            <NavLink href="/" >New Articles</NavLink>
           </NavItem>
-          <NavItem>
-            <NavLink href="#">Top Articles</NavLink>
+          <NavItem className={`${location.pathname=='/top-articles' ? "active" : ""}`}>
+            <NavLink href="/top-articles">Top Articles</NavLink>
           </NavItem>
         </Nav>
       </HeaderNavStyle>
