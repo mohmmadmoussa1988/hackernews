@@ -9,7 +9,7 @@ export const singularStory = {
 export const storyIds = [1];
 
 export const emptySignularStory = {
-    by: undefined;
+    by: undefined,
     id:undefined,
     time:undefined,
     title:undefined,
