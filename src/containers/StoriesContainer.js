@@ -1,5 +1,5 @@
 import React,{useEffect,useState,memo} from 'react';
-import {getStoryIds,getStory} from '../services/api';
+import {getNewStoryIds,getStory} from '../services/api';
 import {Story} from '../components/Story';
 import {StoriesContainerWrapper,GlobalStyle} from '../styles/StoriesContainerStyles';
 import {InfiniteScroll} from '../hooks/infiniteScroll';
@@ -12,7 +12,7 @@ const {count} = InfiniteScroll();
 
   useEffect(()=>{
     console.log('count',count);
-    getStoryIds().then(data=>setStoryIds(data));
+    getNewStoryIds().then(data=>setStoryIds(data));
   },[count])
 
 

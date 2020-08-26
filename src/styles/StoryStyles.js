@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const StoryWrapper = styled.section`
-padding-top:10px;
-margin-bottom : 20px;
 border-top:1px solid #cccccc;
+padding:10px;
 
 &:first-of-type{
     border-top:0;
@@ -14,16 +13,22 @@ border-top:1px solid #cccccc;
     padding-bottom:0;
 }
 
+&:nth-of-type(odd){
+        background: white;
+        }
+    &:nth-of-type(even){
+        background: #f6f6f6;
+        }
+
 `;
 
 export const StoryTitle = styled.h1`
 margin-bottom:5px;
-font-size:18px;
-line-height:1.8;
+font-size:14px;
 text-decoration:none;
+padding-bottom:10px;
 a {
     color:#2e2e2c;
-    background-color:#f7dc3d;
     text-decoration:none;
 }
 `;
@@ -31,12 +36,18 @@ a {
 
 export const StoryMeta = styled.div`
 font-style : italic;
+font-size:12px;
+color:red;
 
 > span:first-child{
     margin-right:10px;
 }
 >span:not(:first-child):before{
     margin: 0 7px;
+}
+
+>span{
+    margin-right:10px;
 }
 
 .story__meta-bold {
@@ -48,3 +59,4 @@ export const StoryMetaElement = styled.span`
 font-weight:bold;
 color:${props=>props.color || 'red'};
 `;
+

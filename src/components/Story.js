@@ -24,6 +24,12 @@ export const Story = memo(function Story({storyId}){
         <span  data-testid="story-time">
             <StoryMetaElement color="#000">Posted:</StoryMetaElement>{mapTime(story.time)}
         </span>
+
+        <span  data-testid="story-score">
+            <StoryMetaElement color="#000">Score:</StoryMetaElement>{story.score}
+        </span>
+
+
     </StoryMeta>
     </StoryWrapper>
     )

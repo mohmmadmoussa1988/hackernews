@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup, waitForElement } from '@testing-library/react';
 import { StoriesContainer } from '../containers/StoriesContainer';
 import { storyIds, singularStory } from '../fixtures';
-import { getStory, getStoryIds } from '../services/api';
+import { getStory, getNewStoryIds } from '../services/api';
 import { InfiniteScroll } from '../hooks/infiniteScroll';
 import { STORY_INCREMENT } from '../constants';
 
@@ -12,7 +12,7 @@ jest.mock('../hooks/infiniteScroll.js');
 
 jest.mock('../services/api', () => ({
   getStory: jest.fn(),
-  getStoryIds: jest.fn(),
+  getNewStoryIds: jest.fn(),
 }));
 
 test('renders the story container with a story', async () => {
@@ -20,7 +20,7 @@ test('renders the story container with a story', async () => {
     count: STORY_INCREMENT,
   }));
   getStory.mockImplementation(() => Promise.resolve(singularStory));
-  getStoryIds.mockImplementation(() => Promise.resolve(storyIds));
+  getNewStoryIds.mockImplementation(() => Promise.resolve(storyIds));
 
   const { getByText, queryByTestId } = render(<StoriesContainer />);
   await waitForElement(() => [

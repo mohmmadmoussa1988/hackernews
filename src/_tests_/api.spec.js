@@ -1,6 +1,6 @@
 import axios from 'axios';
 import {
-  getStoryIds,
+  getNewStoryIds,
   getStory,
   newStoriesUrl,
   storyUrl,
@@ -38,11 +38,11 @@ describe('HackerNews Api', () => {
     });
   });
 
-  describe('getStoryIds api', () => {
+  describe('getNewStoryIds api', () => {
     it('requests and gets story ids from the HackerNews Api', async () => {
       axios.get.mockImplementation(() => Promise.resolve({ data: storyIds }));
 
-      const entity = await getStoryIds();
+      const entity = await getNewStoryIds();
       expect(axios.get).toHaveBeenCalledTimes(1);
       expect(axios.get).toHaveBeenCalledWith(newStoriesUrl);
       expect(entity).toEqual(storyIds);
