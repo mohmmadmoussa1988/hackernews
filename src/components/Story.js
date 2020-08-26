@@ -1,8 +1,8 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState,useEffect,memo } from 'react';
 import {getStory} from '../services/api';
 import  {StoryWrapper,StoryTitle,StoryMeta,StoryMetaElement} from '../styles/StoryStyles.js';
 import {mapTime} from '../mappers/mapTime';
-export const Story = ({storyId}) =>{
+export const Story = memo(function Story({storyId}){
     const [storyIds,setStoryIds] = useState();
     const [story,setStory] = useState({});
     
@@ -11,7 +11,7 @@ export const Story = ({storyId}) =>{
       },[])
 
 
-    return story && story.url ?
+    return story && story.url ? (
     <StoryWrapper data-testid="story">
         <StoryTitle>
     <a href={story.url}>{story.title}</a>
@@ -26,9 +26,10 @@ export const Story = ({storyId}) =>{
         </span>
     </StoryMeta>
     </StoryWrapper>
+    )
     :
-    null
+    null;
     
 
 
-}
+});
