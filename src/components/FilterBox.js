@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import {FilterBoxStyle} from '../styles/HeaderStyles.js';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {SetFilterValue} from '../redux/App/app.actions.js';
 
 export const FilterBox = ()=>{

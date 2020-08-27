@@ -2,7 +2,7 @@ import React,{useEffect,useState} from 'react';
 import {StoriesContainer} from '../containers/StoriesContainer';
 import {getNewStoryIds} from '../services/api';
 import {ShowLoading} from '../redux/App/app.actions';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const NewArticles=() =>{
 const [stories,setStories] = useState([]);

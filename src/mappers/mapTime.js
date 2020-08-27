@@ -9,16 +9,16 @@ export const mapTime = timestamp =>{
     difference -= minutesDifference*1000*60
     var secondsDifference = Math.floor(difference/1000);
     var DateTimeDifference = '';
-    if(daysDifference!='') {DateTimeDifference +=' '+daysDifference +' '+ DaysTimeLabel(daysDifference,'day');} 
-    if(hoursDifference!='') {DateTimeDifference +=' '+hoursDifference +' '+ DaysTimeLabel(daysDifference,'hour'); }
-    if(minutesDifference!='') {DateTimeDifference +=' '+minutesDifference +' '+ DaysTimeLabel(daysDifference,'minute'); }
-    if(secondsDifference!='') {DateTimeDifference +=' '+secondsDifference +' '+ DaysTimeLabel(daysDifference,'second'); }
+    if(daysDifference!=='') {DateTimeDifference +=' '+daysDifference +' '+ DaysTimeLabel(daysDifference,'day');} 
+    if(hoursDifference!=='') {DateTimeDifference +=' '+hoursDifference +' '+ DaysTimeLabel(daysDifference,'hour'); }
+    if(minutesDifference!=='') {DateTimeDifference +=' '+minutesDifference +' '+ DaysTimeLabel(daysDifference,'minute'); }
+    if(secondsDifference!=='') {DateTimeDifference +=' '+secondsDifference +' '+ DaysTimeLabel(daysDifference,'second'); }
     return DateTimeDifference;
 }
 
 const DaysTimeLabel = (difference,label) =>{
 
-    if(difference==1){
+    if(difference===1){
         return label;
     }
     else{

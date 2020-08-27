@@ -1,10 +1,8 @@
 import React, { useState,useEffect,memo } from 'react';
-import {getStory} from '../services/api';
 import  {StoryWrapper,StoryTitle,StoryMeta,StoryMetaElement} from '../styles/StoryStyles.js';
 import {mapTime} from '../mappers/mapTime';
 
 export const Story = memo(function Story({data}){
-    const [storyIds,setStoryIds] = useState();
     const [story,setStory] = useState(data);
 
     useEffect(()=>{

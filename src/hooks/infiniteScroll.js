@@ -13,22 +13,15 @@ export const InfiniteScroll = () =>{
     },[])
 
     useEffect(()=>{
-
-        console.log('count)',count);
-
         if(!loading) return;
-
         if(count+STORY_INCREMENT>= MAX_STORIES){
             setCount(MAX_STORIES);
             console.log('count)',MAX_STORIES);
-
         }
         else{
             setCount(count + STORY_INCREMENT); 
             console.log('count)',count + STORY_INCREMENT);
-
         }
-
         setLoading(false);
 
     },[loading])

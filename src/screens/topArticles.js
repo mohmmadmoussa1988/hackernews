@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import {StoriesContainer} from '../containers/StoriesContainer';
 import {getTopStoryIds} from '../services/api';
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import {ShowLoading} from '../redux/App/app.actions';
 
 const TopArticles=() =>{

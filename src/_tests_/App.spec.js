@@ -29,7 +29,7 @@ describe('App Router', () => {
       });
 
 
-      test('/ should redirect to NewArticles', () => {
+      test('/ should render NewArticles', () => {
         const wrapper = mount(
           <MemoryRouter initialEntries={[ '/' ]}>
             <Provider store={store}>
@@ -39,6 +39,19 @@ describe('App Router', () => {
         );
         console.log('wrapper',wrapper);
         expect(wrapper.find(NewArticles)).toHaveLength(1);
+        expect(wrapper.find(NotFoundPage)).toHaveLength(0);
+      });
+
+      test('/top-articles should render TopArticles', () => {
+        const wrapper = mount(
+          <MemoryRouter initialEntries={[ '/top-articles' ]}>
+            <Provider store={store}>
+            <App />
+            </Provider>
+          </MemoryRouter>
+        );
+        console.log('wrapper',wrapper);
+        expect(wrapper.find(TopArticles)).toHaveLength(1);
         expect(wrapper.find(NotFoundPage)).toHaveLength(0);
       });
 

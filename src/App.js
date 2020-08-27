@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router,Switch,Route,Redirect} from 'react-router-dom';
+import {BrowserRouter as Router,Switch,Route} from 'react-router-dom';
 import NewArticles from './screens/newArticles';
 import TopArticles from './screens/topArticles';
 import NotFoundPage from './screens/notFoundPage';
 import {Header} from './containers/Header';
 import { Container } from 'reactstrap';
 import {Loading} from './components/Loading';
-import { useSelector,useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const App = () =>{
   const showLoading = useSelector(state=>state.app.showloading);
@@ -14,7 +14,7 @@ const App = () =>{
   return (
   <Router>
     <Container>
-    {showLoading==true && <Loading />}      
+    {showLoading===true && <Loading />}      
     <Header/>
       <Switch>
       <Route exact  path='/' component={NewArticles}/>

@@ -1,5 +1,4 @@
 import React from 'react';
-import {HeaderLogo} from '../styles/HeaderStyles.js';
 import { css } from "@emotion/core";
 import {RiseLoader} from "react-spinners";
 import {LoadingStyles} from '../styles/LoadingStyles.js';
